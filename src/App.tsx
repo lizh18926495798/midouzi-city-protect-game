@@ -371,8 +371,8 @@ export default function App() {
       ctx.stroke();
       
       // Draw target X
-      ctx.strokeStyle = '#facc15';
-      ctx.lineWidth = 1;
+      ctx.strokeStyle = '#000000';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(m.targetX - 5, m.targetY - 5);
       ctx.lineTo(m.targetX + 5, m.targetY + 5);
@@ -586,7 +586,8 @@ export default function App() {
       {/* Game Canvas */}
       <canvas
         ref={canvasRef}
-        className="block w-full h-full cursor-crosshair"
+        style={{ cursor: 'url(\'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><line x1="10" y1="0" x2="10" y2="20" stroke="black" stroke-width="2"/><line x1="0" y1="10" x2="20" y2="10" stroke="black" stroke-width="2"/></svg>\') 10 10, crosshair' }}
+        className="block w-full h-full"
         onClick={(e) => fireMissile(e.clientX, e.clientY)}
         onTouchStart={(e) => {
           const touch = e.touches[0];
